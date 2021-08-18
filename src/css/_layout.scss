@@ -1,0 +1,14 @@
+.scroll-y-auto{
+  overflow-y: auto;
+   @extend %scroll-smooth;
+}
+.clearfix{
+  @extend %clearfix;
+}
+.fl {
+  float:left;
+}
+
+.fr {
+  float:right;
+}

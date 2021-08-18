@@ -1,0 +1,8 @@
+.container{
+  --border-color:#ddd;
+  --bg-color:#fff;
+  --primary-color:#af09a0;
+  &.gray{
+   --bg-color:rgba(222,222,222,0.8);
+  }
+}

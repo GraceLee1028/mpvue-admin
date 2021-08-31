@@ -1,6 +1,6 @@
 <template>
   <div class="container gray">
-    <ul class="clearfix">
+    <ul class="lea-list clearfix">
       <li>
         基础组件
         <ul>
@@ -15,33 +15,27 @@
 <script>
 export default {
   beforeCreate() {
-    console.log("1,beforeCreate");
+    console.log('1,beforeCreate')
   },
   created() {
-    console.log("2,created");
+    console.log('2,created')
   },
   onLoad() {
-    console.log("3,onLoad监听页面加载");
+    console.log('3,onLoad监听页面加载')
   },
   onShow() {
-    console.log("4,onShow");
+    console.log('4,onShow')
   },
   onReady() {
-    console.log("5,onReady监听页面初次渲染完成");
+    console.log('5,onReady监听页面初次渲染完成')
   },
   beforeMount() {
-    console.log("6,beforeMount");
+    console.log('6,beforeMount')
   },
   mounted() {
-    console.log("7,mounted");
+    console.log('7,mounted')
   },
-};
+}
 </script>
 <style scoped lang="scss">
-ul > li {
-  line-height: 1.5;
-  &:not(:last-child) {
-    border-bottom: 1px solid var(--border-color);
-  }
-}
 </style>

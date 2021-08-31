@@ -21,3 +21,15 @@
   -webkit-transition: width 2s;
   -o-transition: width 2s;
 }
+.lea-list{
+  width:750px;
+  li {
+    line-height: 1.5;
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--border-color);
+    }
+  }
+  ul{
+    padding-left:10px;
+  }
+}

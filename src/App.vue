@@ -10,26 +10,35 @@ export default {
      * 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
      */
 
-    let logs;
-    if (mpvuePlatform === "my") {
-      logs = mpvue.getStorageSync({ key: "logs" }).data || [];
-      logs.unshift(Date.now());
+    let logs
+    if (mpvuePlatform === 'my') {
+      logs = mpvue.getStorageSync({ key: 'logs' }).data || []
+      logs.unshift(Date.now())
       mpvue.setStorageSync({
-        key: "logs",
+        key: 'logs',
         data: logs,
-      });
+      })
     } else {
-      logs = mpvue.getStorageSync("logs") || [];
-      logs.unshift(Date.now());
-      mpvue.setStorageSync("logs", logs);
+      logs = mpvue.getStorageSync('logs') || []
+      logs.unshift(Date.now())
+      mpvue.setStorageSync('logs', logs)
     }
   },
   log() {
-    console.log(`log at:${Date.now()}`);
+    console.log(`log at:${Date.now()}`)
   },
-};
+}
+</script>
+
+<script>
+export default {
+  onLaunch() {
+    console.log('正在启动')
+    this.$WyRouter.switchTab('/pages/api/main')
+  },
+}
 </script>
 
 <style lang="scss">
-@import "./css/common.scss";
+@import './css/common.scss';
 </style>

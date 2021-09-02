@@ -3,3 +3,4 @@ config/*.js
 src/store/*.js
 src/store/*/*.js
 src/utils/*.js
+indext.html

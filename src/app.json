@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/api/main",
+    "pages/api/main",
     "pages/components/main",
     "pages/index/main",
     "pages/logs/main",

@@ -22,7 +22,8 @@
   -o-transition: width 2s;
 }
 .lea-list{
-  width:750px;
+  width:calc(100% - 20px);//相当于375px - 20px
+  margin:10px auto;
   li {
     line-height: 1.5;
     &:not(:last-child) {

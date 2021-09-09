@@ -1,6 +1,7 @@
 <template>
-  <div class="container gray">
-    登录
+  <div class="container">
+    <div class="login-logo"></div>
+
   </div>
 </template>
 <script>
@@ -28,5 +29,15 @@ export default {
   },
 }
 </script>
-<style scoped lang="scss">
+<style lang="scss" scoped>
+@import '@/css/_mixin.scss';
+.login-logo {
+  width: 301px;
+  height: 244px;
+  margin: 0 auto {
+    top: calc(127px -64px);
+  }
+  // color: $primary-color;
+  @include bg-image-set('/static/login/image_loginillust');
+}
 </style>

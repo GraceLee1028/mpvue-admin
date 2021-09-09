@@ -34,7 +34,7 @@ export default {
 export default {
   onLaunch() {
     console.log('正在启动')
-    this.$WyRouter.switchTab('/pages/api/main')
+    // this.$WyRouter.switchTab('/pages/api/main')
   },
 }
 </script>

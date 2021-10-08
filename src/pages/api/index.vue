@@ -22,6 +22,7 @@ export default {
   },
   onLoad() {
     console.log('3,onLoad监听页面加载')
+    this.$WxRouter.redirectTo('/pages/login/main')
   },
   onShow() {
     console.log('4,onShow')

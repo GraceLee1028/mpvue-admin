@@ -1,11 +1,20 @@
 {
+  "entryPagePath": "pages/pLogin/agreement/main",
   "pages": [
-    "pages/login/main",
     "pages/api/main",
     "pages/components/main",
     "pages/index/main",
     "pages/logs/main",
     "pages/counter/main"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/pLogin/",
+      "pages": [
+        "login/main",
+        "agreement/main"
+      ]
+    }
   ],
   "window": {
     "backgroundColor": "#FA4D93",
@@ -43,32 +52,6 @@
         "pagePath": "pages/logs/main",
         "iconPath": "static/tabs/orders.png",
         "selectedIconPath": "static/tabs/orders-active.png"
-      }
-    ],
-    "items": [
-      {
-        "name": "API",
-        "pagePath": "pages/api/main",
-        "icon": "static/tabs/home.png",
-        "activeIcon": "static/tabs/home-active.png"
-      },
-      {
-        "name": "组件",
-        "pagePath": "pages/components/main",
-        "icon": "static/tabs/home.png",
-        "activeIcon": "static/tabs/home-active.png"
-      },
-      {
-        "name": "示例",
-        "pagePath": "pages/index/main",
-        "icon": "static/tabs/home.png",
-        "activeIcon": "static/tabs/home-active.png"
-      },
-      {
-        "name": "订单",
-        "pagePath": "pages/logs/main",
-        "icon": "static/tabs/orders.png",
-        "activeIcon": "static/tabs/orders-active.png"
       }
     ],
     "position": "bottom"

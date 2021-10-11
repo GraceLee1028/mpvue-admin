@@ -1,9 +1,11 @@
 .container{
-  --border-color:rgb(29, 27, 27);
+  --border-color:#ddd;
   --bg-color:#fff;
+  --bg-gray-color:#F8F8F8;
   --primary-color:#F75193;
   --gray-color:#999;
+  --color:#333;
   &.gray{
-   --bg-color:rgba(222,222,222,0.8);
+   --bg-color:#F8F8F8;
   }
 }

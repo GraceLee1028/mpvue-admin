@@ -34,7 +34,6 @@ export default {
 export default {
   onLaunch() {
     console.log('正在启动')
-    // this.$WxRouter.redirectTo('/pages/login/main')
   },
 }
 </script>

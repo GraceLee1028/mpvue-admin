@@ -1,14 +1,10 @@
 <template>
-  <div class="container gray">
+  <div class="container">
+    <p class="lea-list-title">微信基础组件</p>
     <ul class="lea-list clearfix">
-      <li>
-        基础组件
-        <ul>
-          <li>scroll-view</li>
-          <li>swiper、swiper-item</li>
-          <li>view</li>
-        </ul>
-      </li>
+      <li>scroll-view</li>
+      <li>swiper、swiper-item</li>
+      <li>view</li>
     </ul>
   </div>
 </template>

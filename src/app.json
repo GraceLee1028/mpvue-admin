@@ -1,5 +1,5 @@
 {
-  "entryPagePath": "pages/pLogin/agreement/main",
+  "entryPagePath": "pages/pLogin/login/main",
   "pages": [
     "pages/api/main",
     "pages/components/main",
@@ -16,6 +16,11 @@
       ]
     }
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于位置定位数据保存"
+    }
+  },
   "window": {
     "backgroundColor": "#FA4D93",
     "backgroundTextStyle": "light",

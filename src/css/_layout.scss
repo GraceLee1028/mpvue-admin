@@ -21,4 +21,8 @@
   box-sizing: border-box;
   background-color: var(--bg-color);
   color: var(--primary-color);
+  &.start{
+    justify-content:start;
+    align-items: center;
+  }
 }

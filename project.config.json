@@ -39,6 +39,8 @@
   "appid": "wx6738fe843231798c",
   "projectname": "mympvue",
   "libVersion": "2.20.0",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
       "list": []

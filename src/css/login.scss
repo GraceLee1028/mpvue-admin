@@ -1,0 +1,123 @@
+//微信登陆
+$width: 301px;
+.login-logo {
+  width: $width;
+  height: 244px;
+  margin: 0 auto {
+    top: 63px;
+    bottom: 32px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.login-body {
+  width: $width;
+  font-size: 16px;
+  color: var(--primary-color);
+}
+.login-body-title {
+  line-height: 22px;
+  margin-bottom: 15px;
+  text-indent: 8px;
+  &::after {
+    display: inline-block;
+    $wh: 11px;
+    width: $wh;
+    height: $wh;
+    border: 1px solid var(--primary-color);
+    border-left: 0;
+    border-bottom: 0;
+    transform: skew(45deg);
+  }
+}
+.lbt-input {
+}
+.lbt-button {
+  border: 1px solid var(--primary-color);
+  $h: 40px;
+  height: $h;
+  line-height: $h;
+  border-radius: $h;
+  font-size: 16px;
+  color: var(--primary-color);
+  &:first-of-type {
+    margin-bottom: 15px;
+  }
+}
+.agreement-box {
+  margin-top: 11px;
+  font-size: 12px;
+  text-align: center;
+  color: var(--gray-color);
+  navigator {
+    display: inline-block;
+  }
+}
+// 账号登陆
+.login-area,.login-input-box,.lib-width{
+  width:289px;
+  box-sizing: border-box;
+}
+.login-area {
+    font-size: 16px;
+    $h: 22px;
+    line-height: $h;
+    color: var(--primary-color);
+    margin-top:18px;
+    margin-bottom: 10px;
+    .iconfont{
+      display:inline-block;
+      line-height: 1;
+    }
+  }
+  .login-input-box {
+    $h: 40px;
+    height: $h;
+    line-height: $h;
+    border-radius: $h;
+    border: 1px solid var(--primary-color--border);
+    font-size: 14px;
+    padding-left: 20px;
+    color: var(--layout-color);
+    background-color: var(--primary-color--bg);
+    margin-bottom: 13px;
+    &:last-child {
+      margin-bottom: 15px;
+    }
+    @include display-flex();
+    input {
+      flex: 1;
+      
+    }
+    .input-placeholder{
+      color:var(--primary-color--light)
+    }
+    .icon {
+      $wh: 19px;
+      width: $wh;
+      height: $wh;
+      border-radius: 50%;
+      background-color: #d8d8d8;
+      color: #979797;
+      font-size: 7px;
+      margin-right:14px;
+      text-align: center;
+      overflow: hidden;
+      .iconfont{
+        // padding-top:3px;
+        height: $wh;
+        line-height: $wh;
+      }
+    }
+    .code {
+      color: #fff;
+      text-align: center;
+      width: 98px;
+      height: 100%;
+      line-height: $h;
+    border-radius: $h;
+      background-color: var(--primary-color--light);
+    }
+  }

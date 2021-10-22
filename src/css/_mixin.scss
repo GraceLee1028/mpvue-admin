@@ -135,3 +135,8 @@ $primary-color:#fff;
       }
   }
 }
+@mixin display-flex(){
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}

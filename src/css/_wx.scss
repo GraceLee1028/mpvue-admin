@@ -1,0 +1,28 @@
+/* 未选中的样式 */
+$radio-wh:16px;
+.lea-radio-label{
+    display:inline-flex;
+    flex-direction: row;
+    align-items:center;
+}
+.lea-radio .wx-radio-input {
+    width: $radio-wh;
+    height:$radio-wh;
+    border-radius: 50%;     /* 圆角 */
+    border-color:var(--primary-color);
+}
+/* 选中后 背景及勾 的样式 */
+.lea-radio .wx-radio-input.wx-radio-input-checked{
+    background-color: var(--primary-color);
+    border:0;
+}
+.lea-radio .wx-radio-input.wx-radio-input-checked::before {
+    width:$radio-wh;
+    height:$radio-wh;
+    border-radius: 50%; 
+    line-height:$radio-wh;
+    text-align: center;
+    font-size:calc(#{$radio-wh} - 5px);       /* 勾大小 */
+    color: #fff;            /* 白色勾  */
+    transform: translate(-50%, -50%) scale(1);
+}

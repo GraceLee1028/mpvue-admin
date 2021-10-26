@@ -1,5 +1,5 @@
 {
-  "entryPagePath": "pages/pLogin/otherLogin/main",
+  "entryPagePath": "pages/pLogin/login/main",
   "pages": [
     "pages/api/main",
     "pages/components/main",
@@ -13,7 +13,8 @@
       "pages": [
         "login/main",
         "agreement/main",
-        "otherLogin/main"
+        "otherLogin/main",
+        "hospital/main"
       ]
     }
   ],

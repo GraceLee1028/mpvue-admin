@@ -35,13 +35,6 @@ $width: 301px;
 .lbt-input {
 }
 .lbt-button {
-  border: 1px solid var(--primary-color);
-  $h: 40px;
-  height: $h;
-  line-height: $h;
-  border-radius: $h;
-  font-size: 16px;
-  color: var(--primary-color);
   &:first-of-type {
     margin-bottom: 15px;
   }
@@ -117,7 +110,10 @@ $width: 301px;
       width: 98px;
       height: 100%;
       line-height: $h;
-    border-radius: $h;
+      border-radius: $h;
       background-color: var(--primary-color--light);
+      &.active{
+        background-color: var(--primary-color);
+      }
     }
   }

@@ -45,11 +45,10 @@ $primary-color:#fff;
   font-size: 0;
 }
 //7、单行省略，必须设置width
-@mixin singleline-ellipsis($width:100%){
+@mixin singleline-ellipsis(){
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width:$width;
 }
 // 7.1:多行省略
 @mixin multiline-ellipsis($line){

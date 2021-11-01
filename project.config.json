@@ -38,7 +38,7 @@
   "compileType": "miniprogram",
   "appid": "wx6738fe843231798c",
   "projectname": "mympvue",
-  "libVersion": "2.20.0",
+  "libVersion": "2.20.1",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {

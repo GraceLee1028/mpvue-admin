@@ -47,22 +47,41 @@ export default {
       type: String,
       default: 'text',
     },
+    valueKey: {
+      type: String,
+      default: 'value',
+    },
     disabled: {
       type: Boolean,
       default: false,
     },
   },
   data() {
-    return { label: '' }
+    return {}
+  },
+  computed: {
+    label() {
+      if (!this.value && typeof this.value !== 'number') {
+        return ''
+      } else {
+        let matchedItem = this.range.filter((item) => {
+          return item[this.valueKey] === this.value
+        })
+        console.log(matchedItem)
+        return matchedItem.length > 0 ? matchedItem[0][this.rangeKey] : ''
+      }
+    },
   },
   methods: {
     pickerChange(e) {
       let index = e.mp.detail.value
       let item = this.range[index]
-      console.log(index, item, '=====123')
-      this.$emit('input', item.value)
-      this.label = item.text
-      this.$emit('change', item)
+      if (this.value !== item[this.valueKey]) {
+        //值改变时才执行change事件
+        console.log(item[this.valueKey], '==========value')
+        this.$emit('input', item[this.valueKey])
+        this.$emit('change', item)
+      }
     },
   },
 }

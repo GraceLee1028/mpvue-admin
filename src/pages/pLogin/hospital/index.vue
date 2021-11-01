@@ -35,8 +35,11 @@ export default {
   methods: {
     //城市
     changeCity(item) {
-      console.log(this.form.city)
+      console.log('city change=========')
       this.hospital.disabled = false
+      this.form.hospital = ''
+      this.form.hospitalText = ''
+      console.log(this.form)
       this.form.city === '1' &&
         (this.hospital.data = [
           { value: '1', text: '测试医院' },
@@ -65,7 +68,7 @@ export default {
     select() {
       console.log(this.form)
       let formStr = getUrlStringByObj(this.form)
-      this.$WxRouter.reLaunch('/pages/pLogin/otherLogin/main' + formStr)
+      this.$WxRouter.reLaunch('/pages/pLogin/login/main' + formStr)
     },
   },
 }

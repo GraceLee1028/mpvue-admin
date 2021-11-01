@@ -2,7 +2,7 @@
   <div class="container">
     <p class="lea-list-title">微信基础组件</p>
     <ul class="lea-list clearfix">
-      <li>scroll-view</li>
+      <li @tap="toDetail('/pages/pApi/scrollView/main')">scroll-view</li>
       <li>swiper、swiper-item</li>
       <li>view</li>
     </ul>
@@ -18,6 +18,11 @@ export default {
   },
   data() {
     return {}
+  },
+  methods: {
+    toDetail(url) {
+      this.$WxRouter.navigateTo(url)
+    },
   },
 }
 </script>

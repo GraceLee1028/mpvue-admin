@@ -4,7 +4,7 @@
       <img src="//raw.githubusercontent.com/lifengand1992/wx/master/xym/login/image_loginillust.png">
     </div>
     <section class="login-body">
-      <div class="login-body-title">你好，欢迎你的加入</div>
+      <div class="login-area" @tap="toHospital()">{{other.hospitalText?other.hospitalText:'请选择所在医院'}}<i class="iconfont icon-right"></i></div>
       <!-- <button class="lbt-button" plain @tap="launch('weixin')">唤起app</button> -->
       <button class="lbt-button" plain @tap="loginHandle('weixin')">微信登陆</button>
       <button class="lbt-button" @tap="loginHandle('normal')" plain>账号登陆</button>
@@ -21,6 +21,7 @@
 </template>
 <script>
 import { login } from '@/api/user.js'
+import { validateNotEmpty } from '@/utils/validate.js'
 export default {
   beforeCreate() {
     console.log('1,beforeCreate')
@@ -28,10 +29,13 @@ export default {
   created() {
     console.log('2,created')
   },
-  onLoad() {
+  onLoad(query) {
     // wx.showNavigationBarLoading()
     // wx.setNavigationBarTitle({ title: '登陆' })
     console.log('3,onLoad监听页面加载')
+    let { hospitalText, hospital } = query
+    this.other.hospitalText = hospitalText
+    this.other.hospital = hospital
   },
   onShow() {
     console.log('4,onShow')
@@ -48,6 +52,7 @@ export default {
   data() {
     return {
       agree: false,
+      other: { hospitalText: '', hospital: '' },
     }
   },
   methods: {
@@ -65,20 +70,47 @@ export default {
       }
       this[name + 'Login']()
     },
+    //验证
+    validate() {
+      let msg = ''
+      console.log(this.other)
+      if (!validateNotEmpty(this.other.hospital)) {
+        msg = '请选择医院'
+      }
+      return msg
+    },
+    validateMsg() {
+      return new Promise((resolve) => {
+        let msg = this.validate()
+        if (msg) {
+          this.$WxMessagebox.showToast({
+            title: msg,
+            icon: 'error',
+          })
+        } else {
+          resolve()
+        }
+      })
+    },
     //账号登录
     normalLogin() {
-      this.$WxRouter.navigateTo('/pages/pLogin/otherLogin/main')
+      this.validateMsg().then(() => {
+        this.$WxRouter.navigateTo('/pages/pLogin/otherLogin/main')
+      })
     },
     //微信登录-----------获取手机号
     async weixinLogin() {
-      let target = await this.$WxUser.getUserProfile()
-      console.log(target, '===========target')
-      console.log(`iv:${target.iv}`)
-      console.log(`encryptedData:${target.encryptedData}`)
-      let { iv, encryptedData } = target
-      let code = await this.$WxUser.login()
-      console.log(`code： ${code}`)
-      this.loginAjax({ iv, encryptedData, code, audience: 'MINIAPP_INNER' })
+      this.validateMsg().then(async () => {
+        let p1 = this.$WxUser.getUserProfile(),
+          p2 = this.$WxUser.login()
+        Promise.all([p1, p2]).then((result) => {
+          let target = result[0]
+          let { iv, encryptedData } = target
+          let code = result[1]
+          console.log(result)
+          this.loginAjax({ iv, encryptedData, code, audience: 'MINIAPP_INNER' })
+        })
+      })
     },
     loginAjax(data) {
       login(data).then((content) => {
@@ -106,6 +138,9 @@ export default {
           console.log(res)
         },
       })
+    },
+    toHospital() {
+      this.$WxRouter.navigateTo('/pages/pLogin/hospital/main')
     },
   },
 }

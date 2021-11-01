@@ -6,6 +6,10 @@
       <li>swiper、swiper-item</li>
       <li>view</li>
     </ul>
+
+    <ul class="lea-list clearfix">
+      <li @tap="toDetail('/pages/pApi/textarea/main')">textarea</li>
+    </ul>
   </div>
 </template>
 <script>

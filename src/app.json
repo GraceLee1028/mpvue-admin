@@ -20,7 +20,8 @@
     {
       "root": "pages/pApi/",
       "pages": [
-        "scrollView/main"
+        "scrollView/main",
+        "textarea/main"
       ]
     }
   ],
